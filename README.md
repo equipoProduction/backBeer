@@ -9,7 +9,9 @@ CRUD MONGO - EXPRESS - NODE
 
 ``git clone https://github.com/d-maza/e-commers``
 
+-Recuerda cambiar a la rama en Desarrollo entes de empezar
 
+``$ git checkout develop``
 
 - Acede a la carpeta con el comando:
 
@@ -24,13 +26,15 @@ CRUD MONGO - EXPRESS - NODE
 - Elimina el `.example` del archivo `.env.example` quedandote un archivo con el nombre `.env`
 
 
-> En este archivo puedes editar las whitelist de tus accesos permitidos (dominios o puertos) y cambiar en acceso de base de dados (Actuamente esta en localhots:3000)
-
 El ejercicio de ejecuta en el archivo app.js:
 
  `node app`
 
 
+IMPORTANTE: 
+
+recuerda subir tus cambios en...
+``git push -u origin develop``
 
 ## 🛠 Skills
 
