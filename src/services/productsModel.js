@@ -20,3 +20,12 @@ exports.get_product  = async (id) => {
 exports.edit_product = async (id,body) => {
   return await Product.findByIdAndUpdate(id, body);
 }
+
+exports.get_brand  = async (brand) => {
+  console.log(brand);
+  return await Product.find();
+}
+
+exports.get_productsNovelty  = async () => {
+  return await Product.find({novelty:true});
+}
