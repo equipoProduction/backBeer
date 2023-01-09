@@ -5,7 +5,7 @@ const usersCtrl = {};
 usersCtrl.get_users = async (req, res, next) => {
   try {
     const users = await userModel.get_users();
-    res.json(users);
+    res.json(users, 200);
   } catch (error) {
       res.status(500).send(error.message);
   }
@@ -16,7 +16,7 @@ usersCtrl.delete_user = async (req, res) => {
     let product = await userModel.delete_user(req.params.id);
     res.json({
       mensaje: "🔥 Eliminado correctamente 🔥",
-    });
+    },200);
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -25,9 +25,9 @@ usersCtrl.delete_user = async (req, res) => {
 usersCtrl.add_user = async (req, res) => {
   try {
     let user = await userModel.add_user(req.body);
-     res.send(user,201);
+      res.json(user,201);
   } catch (error) {
-     res.status(500).send(error.message);
+      res.status(500).send(error.message);
   }
 };
 
@@ -35,7 +35,7 @@ usersCtrl.get_user = async (req, res) => {
   const id = req.params.id;
   try {
     const user = await userModel.get_user({ _id: id });
-      res.send(user) 
+      res.json(user, 200) 
   } catch (error) {
       res.end(error.message).status(204);
   }
