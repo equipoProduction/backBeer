@@ -25,9 +25,9 @@ usersCtrl.delete_user = async (req, res) => {
 usersCtrl.add_user = async (req, res) => {
   try {
     let user = await userModel.add_user(req.body);
-     res.json(user,201);
+      res.json(user,201);
   } catch (error) {
-     res.status(500).send(error.message);
+      res.status(500).send(error.message);
   }
 };
 

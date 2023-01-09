@@ -27,7 +27,7 @@ productosCtrl.add_product = async (req, res) => {
     let product = await productModel.add_product(req.body);
       res.json(product, 201);
   } catch (error) {
-     res.status(500).send(error.message);
+      res.status(500).send(error.message);
   }
 };
 
@@ -52,6 +52,60 @@ productosCtrl.edit_product = async (req, res) => {
     });
   } catch (error) {
     res.status(500).send(error.message);
+  }
+};
+
+//
+// A continuación muestra los productos en la Store
+//
+
+productosCtrl.get_productBrand = async (req, res) => {
+  const brand = req.params.brand;
+  try {
+    const product = await productModel.get_brand(brand);
+    res.send(product).status(200);
+  } catch (error) {
+      res.end(error.message).status(204);
+  }
+};
+
+productosCtrl.get_productType = async (req, res) => {
+  const type = req.params.type;
+  try {
+    const product = await productModel.get_type(type);
+    res.send(product).status(200);
+  } catch (error) {
+      res.end(error.message).status(204);
+  }
+};
+
+productosCtrl.get_productGraduation = async (req, res) => {
+  const graduation = req.params.graduation;
+  try {
+    const product = await productModel.get_graduation(graduation);
+    res.send(product).status(200);
+  } catch (error) {
+      res.end(error.message).status(204);
+  }
+};
+
+productosCtrl.get_productScore = async (req, res) => {
+  const score = req.params.score;
+  try {
+    const product = await productModel.get_score(score);
+    res.send(product).status(200);
+  } catch (error) {
+      res.end(error.message).status(204);
+  }
+};
+
+productosCtrl.get_productPrice = async (req, res) => {
+  const price = req.params.price;
+  try {
+    const product = await productModel.get_price(price);
+    res.send(product).status(200);
+  } catch (error) {
+      res.end(error.message).status(204);
   }
 };
 
