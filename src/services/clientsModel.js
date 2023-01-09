@@ -1,4 +1,4 @@
-const Client = require('../models/clientShema')
+const Client = require('../models/clientSchema')
 
 exports.get_clients  = async () => {
     return await Client.find();

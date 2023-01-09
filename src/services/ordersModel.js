@@ -1,4 +1,4 @@
-const Order = require('../models/orderShema')
+const Order = require('../models/orderSchema')
 
 exports.get_orders  = async () => {
     return await Order.find();
