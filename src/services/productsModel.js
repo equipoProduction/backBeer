@@ -26,21 +26,21 @@ exports.edit_product = async (id,body) => {
 //
 
 exports.get_brand  = async (brand) => {
-  return await Product.find();
+  return await Product.find({'brand':brand});
 }
 
 exports.get_type  = async (type) => {
-  return await Product.find();
+  return await Product.find({'type':type});
 }
 
 exports.get_graduation  = async (graduation) => {
-  return await Product.find();
+  return await Product.find({'graduation':graduation});
 }
 
 exports.get_score  = async (score) => {
-  return await Product.find();
+  return await Product.find({'score':score});
 }
 
 exports.get_price  = async (price) => {
-  return await Product.find();
+  return await Product.find({'price':price});
 }
