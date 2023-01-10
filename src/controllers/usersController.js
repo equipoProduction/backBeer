@@ -55,5 +55,19 @@ usersCtrl.edit_user = async (req, res) => {
   }
 };
 
+usersCtrl.new_user = async (req, res) => {
+  body = req.body
+  res.send({
+    message: 'Datos recibidos en el servidor 🤝🏼',
+    body: body
+  }, 200)
+  // try {
+  //   let user = await userModel.add_user(req.body);
+  //    res.json(user,201);
+  // } catch (error) {
+  //    res.status(500).send(error.message);
+  // }
+};
+
 module.exports = usersCtrl;
 
