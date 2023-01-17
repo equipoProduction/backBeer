@@ -22,7 +22,7 @@ exports.edit_product = async (id,body) => {
 }
 
 //
-// Peticiones de la store al back sobre tipo detalles productos
+// Peticiones de la home/store al back sobre tipo detalles productos
 //
 
 exports.get_brand  = async (brand) => {
@@ -43,4 +43,8 @@ exports.get_score  = async (score) => {
 
 exports.get_price  = async (price) => {
   return await Product.find({'price':price});
+}
+
+exports.get_productsNovelty  = async () => {
+  return await Product.find({novelty:true});
 }
