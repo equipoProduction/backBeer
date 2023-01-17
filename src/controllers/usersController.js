@@ -55,5 +55,15 @@ usersCtrl.edit_user = async (req, res) => {
   }
 };
 
+usersCtrl.new_user = async (req, res) => {
+  body = req.body
+  try {
+    let user = await userModel.new_user(req.body);
+     res.json(user,201);
+  } catch (error) {
+     res.status(500).send(error.message);
+  }
+};
+
 module.exports = usersCtrl;
 

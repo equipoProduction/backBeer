@@ -9,6 +9,6 @@ router.delete("/delete_user/:id", usersCtrl.delete_user);
 router.get("/get_user/:id" ,usersCtrl.get_user);
 router.put("/edit_user/:id" ,usersCtrl.edit_user);
 
-
+router.post("/new_user", usersCtrl.new_user);
 
 module.exports = router;
