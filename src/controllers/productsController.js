@@ -2,14 +2,14 @@ const productModel = require ('../services/productsModel')
 
 const productosCtrl = {};
 
-productosCtrl.get_products = async (req, res, next) => {
-  try {
-    const products = await productModel.get_products();
-    res.json(products, 200);
-  } catch (error) {
-      res.status(500).send(error.message);
-  }
-};
+// productosCtrl.get_products = async (req, res, next) => {
+//   try {
+//     const products = await productModel.get_products();
+//     res.json(products, 200);
+//   } catch (error) {
+//       res.status(500).send(error.message);
+//   }
+// };
 
 productosCtrl.delete_product = async (req, res) => {
   try {
@@ -56,14 +56,14 @@ productosCtrl.edit_product = async (req, res) => {
 };
 
 //
-// A continuación muestra los productos en la Store
+// A continuación muestra los productos en la Store/home
 //
 
 productosCtrl.get_productBrand = async (req, res) => {
   const brand = req.params.brand;
   try {
     const product = await productModel.get_brand(brand);
-    res.send(product).status(200);
+      res.send(product).status(200);
   } catch (error) {
       res.end(error.message).status(204);
   }
@@ -106,6 +106,15 @@ productosCtrl.get_productPrice = async (req, res) => {
     res.send(product).status(200);
   } catch (error) {
       res.end(error.message).status(204);
+  }
+};
+
+productosCtrl.get_novelty = async (req, res, next) => {
+  try {
+    const products = await productModel.get_productsNovelty();
+    res.json(products, 200);
+  } catch (error) {
+      res.status(500).send(error.message);
   }
 };
 
