@@ -2,14 +2,14 @@ const productModel = require ('../services/productsModel')
 
 const productosCtrl = {};
 
-// productosCtrl.get_products = async (req, res, next) => {
-//   try {
-//     const products = await productModel.get_products();
-//     res.json(products, 200);
-//   } catch (error) {
-//       res.status(500).send(error.message);
-//   }
-// };
+productosCtrl.get_products = async (req, res, next) => {
+  try {
+    const products = await productModel.get_products();
+    res.json(products, 200);
+  } catch (error) {
+      res.status(500).send(error.message);
+  }
+};
 
 productosCtrl.delete_product = async (req, res) => {
   try {
@@ -69,10 +69,10 @@ productosCtrl.get_productBrand = async (req, res) => {
   }
 };
 
-productosCtrl.get_productType = async (req, res) => {
-  const type = req.params.type;
+productosCtrl.get_productCategory = async (req, res) => {
+  const category = req.params.category;
   try {
-    const product = await productModel.get_type(type);
+    const product = await productModel.get_category(category);
     res.send(product).status(200);
   } catch (error) {
       res.end(error.message).status(204);
