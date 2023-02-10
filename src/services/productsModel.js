@@ -45,6 +45,6 @@ exports.get_price  = async (price) => {
   return await Product.find({price}).where('total').gt(0);
 }
 
-exports.get_productsNovelty  = async () => {
-  return await Product.find({novelty:true}).where('total').gt(0);
+exports.get_novelty  = async () => {
+  return await Product.find({novelty:true});
 }
